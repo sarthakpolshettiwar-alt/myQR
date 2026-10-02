@@ -114,6 +114,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -201,7 +203,7 @@ body {
 /* Main Typography */
 .main-heading {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+  font-size: clamp(2.1rem, 5.2vw, 3.4rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -217,11 +219,11 @@ body {
 }
 
 .hero-description {
-  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
   color: var(--text-light-sub);
   max-width: 580px;
   line-height: 1.6;
-  margin-bottom: 34px;
+  margin-bottom: 32px;
   font-weight: 400;
 }
 
@@ -233,7 +235,7 @@ body {
   justify-content: center;
   width: 100%;
   max-width: 520px;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .btn {
@@ -277,13 +279,13 @@ body {
 }
 
 .btn-text small {
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  opacity: 0.88;
+  opacity: 0.9;
   letter-spacing: 0.02em;
 }
 
-/* Call Button Styling */
+/* Primary Call Button */
 .btn-call {
   background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
   color: #FFFFFF;
@@ -296,7 +298,7 @@ body {
   background: linear-gradient(135deg, #4F46E5 0%, #2563EB 100%);
 }
 
-/* WhatsApp Button Styling */
+/* WhatsApp Button */
 .btn-whatsapp {
   background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: #FFFFFF;
@@ -311,6 +313,45 @@ body {
 
 .btn:active {
   transform: translateY(0);
+}
+
+/* Secondary Alternate Call Action */
+.secondary-action-wrapper {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-call-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.btn-call-secondary:hover, .btn-call-secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.btn-call-secondary strong {
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 /* ==========================================================================
@@ -476,22 +517,58 @@ body {
   margin: 18px 0 22px;
 }
 
-/* Phone Display Box */
+/* Dual Phone Numbers Container */
 .phone-display-container {
   background: #F8F9FD;
   border: 1px solid rgba(94, 66, 114, 0.1);
   border-radius: var(--radius-md);
-  padding: 16px 20px;
+  padding: 18px 20px;
   margin-bottom: 24px;
 }
 
+.phone-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
 .phone-label {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
-  margin-bottom: 6px;
+}
+
+.phone-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.primary-badge {
+  background: rgba(37, 99, 235, 0.1);
+  color: #1D4ED8;
+}
+
+.secondary-badge {
+  background: rgba(94, 66, 114, 0.1);
+  color: var(--purple);
+}
+
+.phone-item-divider {
+  height: 1px;
+  background: dashed rgba(94, 66, 114, 0.14);
+  margin: 14px 0;
 }
 
 .phone-number-row {
@@ -508,14 +585,22 @@ body {
   text-decoration: none;
   color: var(--navy);
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: clamp(1.1rem, 3.5vw, 1.35rem);
   font-weight: 700;
   letter-spacing: 0.02em;
   transition: color var(--transition-fast);
 }
 
-.phone-link:hover {
+.phone-link:hover, .phone-link:focus-visible {
   color: var(--call-blue);
+}
+
+.phone-link-secondary {
+  color: var(--purple);
+}
+
+.phone-link-secondary:hover, .phone-link-secondary:focus-visible {
+  color: var(--navy);
 }
 
 .phone-icon-circle {
@@ -530,6 +615,11 @@ body {
   flex-shrink: 0;
 }
 
+.secondary-circle {
+  background: rgba(94, 66, 114, 0.08);
+  color: var(--purple);
+}
+
 /* Copy Button */
 .copy-btn {
   position: relative;
@@ -537,7 +627,7 @@ body {
   border: 1px solid rgba(94, 66, 114, 0.15);
   color: var(--navy);
   border-radius: var(--radius-sm);
-  padding: 8px 12px;
+  padding: 7px 12px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -545,6 +635,7 @@ body {
   gap: 6px;
   transition: all var(--transition-fast);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
 }
 
 .copy-btn:hover {
@@ -639,7 +730,7 @@ body {
 }
 
 /* ==========================================================================
-   QR CARD SPECIFICS
+   QR CARD SPECIFICS (Clean, user-facing, no debug/technical info)
    ========================================================================== */
 .qr-display-card {
   display: flex;
@@ -731,7 +822,7 @@ body {
 /* Required Text under QR */
 .qr-heading {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: var(--navy);
@@ -740,67 +831,11 @@ body {
 }
 
 .qr-subtext {
-  font-size: 0.86rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   max-width: 280px;
-  line-height: 1.45;
-  margin-bottom: 20px;
-}
-
-/* Metadata Box */
-.qr-meta-box {
-  width: 100%;
-  background: #FDF5FC;
-  border: 1px solid rgba(234, 173, 194, 0.4);
-  border-radius: var(--radius-md);
-  padding: 12px 16px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  text-align: left;
-}
-
-.qr-meta-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.78rem;
-  gap: 8px;
-}
-
-.qr-meta-label {
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.qr-meta-value {
-  color: var(--navy);
-  font-weight: 700;
-  word-break: break-all;
-}
-
-/* Download QR Button */
-.btn-download-qr {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 12px 18px;
-  background: rgba(56, 59, 102, 0.06);
-  color: var(--navy);
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  font-family: var(--font-heading);
-  font-size: 0.86rem;
-  font-weight: 700;
-  transition: all var(--transition-fast);
-}
-
-.btn-download-qr:hover {
-  background: var(--navy);
-  color: #FFFFFF;
+  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
 /* ==========================================================================
@@ -872,6 +907,11 @@ body {
     min-height: 56px;
   }
   
+  .btn-call-secondary {
+    font-size: 0.82rem;
+    padding: 9px 16px;
+  }
+  
   .phone-link {
     font-size: 1.15rem;
   }
@@ -879,5 +919,31 @@ body {
   .qr-image {
     width: 200px;
     height: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  
+  .phone-link {
+    font-size: 1.02rem;
+    gap: 8px;
+  }
+  
+  .phone-icon-circle {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .copy-btn {
+    padding: 6px 9px;
+  }
+  
+  .btn-call-secondary {
+    font-size: 0.78rem;
+    padding: 8px 12px;
   }
 }

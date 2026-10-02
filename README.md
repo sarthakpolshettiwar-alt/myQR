@@ -22,8 +22,17 @@ This repository hosts the personal vehicle contact website for **Sarthak Polshet
 
 - **Live Website**: [https://sarthakpolshettiwar-alt.github.io/myQR/](https://sarthakpolshettiwar-alt.github.io/myQR/)
 - **GitHub Repository**: [https://github.com/sarthakpolshettiwar-alt/myQR](https://github.com/sarthakpolshettiwar-alt/myQR)
-- **Primary Phone / Call**: [`tel:+919763574459`](tel:+919763574459) (+91 9763574459)
+- **Primary Call / Phone**: [`tel:+919763574459`](tel:+919763574459) (+91 9763574459)
+- **Secondary Call / Alternate**: [`tel:+918007057507`](tel:+918007057507) (+91 8007057507)
 - **WhatsApp Chat**: [https://wa.me/919763574459](https://wa.me/919763574459)
+
+---
+
+## 📱 QR Code Assets
+
+- **Final High-Resolution QR**: [`qr-contact-final.png`](./qr-contact-final.png) (2940 × 2940 px, 300 DPI, Error Correction H, encodes `https://sarthakpolshettiwar-alt.github.io/myQR/`)
+- **Printable Physical Sticker**: [`qr-contact-final-print.png`](./qr-contact-final-print.png) (2400 × 3200 px, 300 DPI, with owner name, primary and secondary numbers, and framing)
+- **Web QR Asset**: [`qr-contact.png`](./qr-contact.png)
 
 ---
 
@@ -40,22 +49,11 @@ The visual design is inspired by the bespoke aesthetic palette:
 
 ---
 
-## 📱 QR Code Specification
-
-The file [`qr-contact.png`](./qr-contact.png) was generated strictly adhering to vehicle sticker standards:
-- **Encoded URL**: `https://sarthakpolshettiwar-alt.github.io/myQR/`
-- **Error Correction**: Level **H** (High, up to 30% error tolerance, ideal for car windshield stickers subject to glare/rain)
-- **Resolution**: High-density 1176 × 1176 px at 300 DPI
-- **Contrast**: Deep navy/black modules on pure white background
-- **Quiet Zone**: Standard 4-module quiet border for instant mobile camera recognition
-
----
-
 ## 🛠️ Technology Stack
 
 - **HTML5**: Semantic markup with mobile-first viewport configuration
 - **Vanilla CSS**: Clean, fast, framework-free design with fluid typography and CSS variables
-- **Minimal JavaScript**: Client-side clipboard copy and vCard (.vcf) generator with zero external runtime dependencies
+- **Minimal JavaScript**: Client-side clipboard copy and dual-number vCard (.vcf) generator with zero external runtime dependencies
 - **GitHub Pages**: Automated deployment on the `main` branch
 
 ---
@@ -63,5 +61,6 @@ The file [`qr-contact.png`](./qr-contact.png) was generated strictly adhering to
 ## 👤 Owner Details
 
 - **Owner**: Sarthak Polshettiwar
-- **Phone**: +91 9763574459
+- **Primary Contact**: +91 9763574459
+- **Secondary Contact**: +91 8007057507
 - **Direct WhatsApp**: [https://wa.me/919763574459](https://wa.me/919763574459)
